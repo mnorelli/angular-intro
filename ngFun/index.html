@@ -24,16 +24,21 @@
 
     </div>
 
-  <input ng-model="filter-name"
+  <input ng-model="filterName" placeholder="Search">
 
   <table class="table table-striped">
     <tr>
       <th>Ndex</th><th>Name</th><th>Type
-    </th>
-    <tr ng-repeat="poke in pokemon | filter:filter-name "">
-      <td>{{ poke.Ndex }}</td><td>{{ poke.name }}</td><td>{{ poke.type }}</td>
+    </th><th>Nemesis</th>
+    <tr ng-repeat="poke in pokemon | orderBy:'Ndex' | filter:filterName">
+      <td>{{ poke.Ndex }}</td><td>{{ poke.name }}</td><td>{{ poke.type }}</td><td> {{ poke.name | reverse }}</td>
     </tr>
   </table>
+  <br>
+  <br>
+  <br>
+  <br>
+
 </div>
 </body>
 </html>
