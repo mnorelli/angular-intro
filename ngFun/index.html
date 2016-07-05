@@ -6,8 +6,11 @@
   <script type="text/javascript" src="bower_components/angular/angular.js"></script>
   <script type="text/javascript" src="app.js"></script>
   <link rel="stylesheet" href="bower_components/bootstrap-css-only/css/bootstrap.min.css">
+  <link rel="stylesheet" href="bower_components/dragular/dist/dragular.min.css">
+  <script src='bower_components/dragular/dist/dragular.min.js'></script>
 </head>
 <body ng-app="ngFun">
+<current-weather city="Jakarta"></current-weather><br><br>
   {{  1467742467858 | date:'M/d/yy' }}
   <br>
   {{ 4*4 }}
@@ -31,7 +34,7 @@
       <th>Ndex</th><th>Name</th><th>Type
     </th><th>Nemesis</th>
     <tr ng-repeat="poke in pokemon | orderBy:'Ndex' | filter:filterName">
-      <td>{{ poke.Ndex }}</td><td>{{ poke.name }}</td><td>{{ poke.type }}</td><td> {{ poke.name | reverse }}</td>
+      <td>{{ poke.Ndex }}</td><td><button ng-click="count = count + 1" ng-init="count=0">{{ poke.name }}</button><span class="btn btn-warning" > {{count}}</span></td><td>{{ poke.type }}</td><td> {{ poke.name | reverse }}</td>
     </tr>
   </table>
   <br>
